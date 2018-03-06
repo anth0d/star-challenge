@@ -2,19 +2,30 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
-  background-color: #222;
-  height: 150px;
+  background-color: rgb(17, 28, 75);
   padding: 20px;
   color: white;
 }
 
+/* hacky thing to make a funny looking title */
+.App-title-container {
+  animation-name: App-title-breathe;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  height: 100%;
+  display: inline-block;
+  margin-top: 15px;
+}
+
 .App-title {
+  animation-name: App-title-wobble;
+  animation-duration: 6s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
   font-size: 1.5em;
 }
 
@@ -22,7 +33,20 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@keyframes App-title-wobble {
+  from { transform: rotate(-5deg); }
+  to { transform: rotate(5deg); }
+}
+
+@keyframes App-title-breathe {
+  from {
+    transform: scale(1.0, 1.5);
+    -ms-transform: scale(1.0, 1.5);
+    -webkit-transform: scale(1.0, 1.5);
+  }
+  to {
+    transform: scale(1.0, 1.8);
+    -ms-transform: scale(1.0, 1.8);
+    -webkit-transform: scale(1.0, 1.8);
+  }
 }

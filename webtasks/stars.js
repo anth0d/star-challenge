@@ -6,7 +6,7 @@ export default function(context, callback) {
 
   MongoClient.connect(MONGO_URL, (err, db) => {
     if (err) {
-      return callback(err, 'Uh oh');
+      return callback(err);
     }
     callback(null, 'hello!');
   });
